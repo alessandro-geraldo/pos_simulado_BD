@@ -1,6 +1,7 @@
 package pos.simulado_bd.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Pessoa {
@@ -10,13 +11,16 @@ public class Pessoa {
     private Long codPessoa;
     @Column(nullable = false)
     private String nomePessoa;
+    @ManyToOne
+    private List<Fone> fones;
 
     public Pessoa() {
     }
 
-    public Pessoa(Long codPessoa, String nomePessoa) {
+    public Pessoa(Long codPessoa, String nomePessoa, List<Fone> fones) {
         this.codPessoa = codPessoa;
         this.nomePessoa = nomePessoa;
+        this.fones = fones;
     }
 
     public Long getCodPessoa() {
@@ -33,5 +37,13 @@ public class Pessoa {
 
     public void setNomePessoa(String nomePessoa) {
         this.nomePessoa = nomePessoa;
+    }
+
+    public List<Fone> getFones() {
+        return fones;
+    }
+
+    public void setFones(List<Fone> fones) {
+        this.fones = fones;
     }
 }
