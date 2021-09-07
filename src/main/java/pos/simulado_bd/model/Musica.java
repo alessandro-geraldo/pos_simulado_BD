@@ -1,6 +1,7 @@
 package pos.simulado_bd.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Musica {
@@ -12,14 +13,20 @@ public class Musica {
     private double duracao;
     @Column(nullable = false)
     private String titulo;
+    @OneToMany(mappedBy = "musicas")
+    private Categoria categoria;
+    @OneToMany(mappedBy = "musica")
+    private List<Gravacao> gravacoes;
 
     public Musica() {
     }
 
-    public Musica(Long codMusica, double duracao, String titulo) {
+    public Musica(Long codMusica, double duracao, String titulo, Categoria categoria, List<Gravacao> gravacoes) {
         this.codMusica = codMusica;
         this.duracao = duracao;
         this.titulo = titulo;
+        this.categoria = categoria;
+        this.gravacoes = gravacoes;
     }
 
     public Long getCodMusica() {
@@ -44,5 +51,21 @@ public class Musica {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public List<Gravacao> getGravacoes() {
+        return gravacoes;
+    }
+
+    public void setGravacoes(List<Gravacao> gravacoes) {
+        this.gravacoes = gravacoes;
     }
 }

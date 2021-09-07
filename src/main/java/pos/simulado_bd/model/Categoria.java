@@ -1,6 +1,7 @@
 package pos.simulado_bd.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Categoria {
@@ -10,6 +11,8 @@ public class Categoria {
     private Long CodCategoria;
     @Column(nullable = false)
     private String descCategoria;
+    @ManyToOne
+    private List<Musica> musicas;
 
     public Categoria() {
     }

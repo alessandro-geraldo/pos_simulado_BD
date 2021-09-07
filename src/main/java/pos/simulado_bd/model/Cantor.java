@@ -1,6 +1,7 @@
 package pos.simulado_bd.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Cantor {
@@ -12,6 +13,8 @@ public class Cantor {
     private String nomeCantor;
     @Column(nullable = false)
     private String pais;
+    @OneToMany(mappedBy = "cantor")
+    private List<Gravacao> gravacoes;
 
     public Cantor() {
     }

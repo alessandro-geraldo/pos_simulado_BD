@@ -1,6 +1,7 @@
 package pos.simulado_bd.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Gravadora {
@@ -12,14 +13,17 @@ public class Gravadora {
     private String nomeGravadora;
     @Column(nullable = false)
     private String pais;
+    @OneToMany(mappedBy = "gravadora")
+    private List<Gravacao> gravacao;
 
     public Gravadora() {
     }
 
-    public Gravadora(Long codGravadora, String nomeGravadora, String pais) {
+    public Gravadora(Long codGravadora, String nomeGravadora, String pais, List<Gravacao> gravacao) {
         this.codGravadora = codGravadora;
         this.nomeGravadora = nomeGravadora;
         this.pais = pais;
+        this.gravacao = gravacao;
     }
 
     public Long getCodGravadora() {
@@ -44,5 +48,13 @@ public class Gravadora {
 
     public void setPais(String pais) {
         this.pais = pais;
+    }
+
+    public List<Gravacao> getGravacao() {
+        return gravacao;
+    }
+
+    public void setGravacao(List<Gravacao> gravacao) {
+        this.gravacao = gravacao;
     }
 }
