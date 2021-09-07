@@ -13,7 +13,7 @@ public class Musica {
     private double duracao;
     @Column(nullable = false)
     private String titulo;
-    @OneToMany(mappedBy = "musicas")
+    @ManyToOne
     private Categoria categoria;
     @OneToMany(mappedBy = "musica")
     private List<Gravacao> gravacoes;

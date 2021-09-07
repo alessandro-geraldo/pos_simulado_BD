@@ -12,7 +12,7 @@ public class Fone {
     private String numero;
     @Column(nullable = false)
     private String tipo;
-    @OneToMany(mappedBy = "fones")
+    @ManyToOne
     private Pessoa pessoa;
 
     public Fone() {

@@ -11,7 +11,7 @@ public class Categoria {
     private Long CodCategoria;
     @Column(nullable = false)
     private String descCategoria;
-    @ManyToOne
+    @OneToMany(mappedBy = "categoria")
     private List<Musica> musicas;
 
     public Categoria() {

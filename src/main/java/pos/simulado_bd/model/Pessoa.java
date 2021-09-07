@@ -11,7 +11,7 @@ public class Pessoa {
     private Long codPessoa;
     @Column(nullable = false)
     private String nomePessoa;
-    @ManyToOne
+    @OneToMany(mappedBy = "pessoa")
     private List<Fone> fones;
 
     public Pessoa() {
