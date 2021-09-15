@@ -29,4 +29,8 @@ public class MusicaService {
     public List<Musica> findAll(){
         return musicaRepository.findAll();
     }
+
+    public List<Musica> findByMusicaTempoDuraco(Integer tempo){
+        return musicaRepository.findByMusicaTempoDuracao(tempo);
+    }
 }

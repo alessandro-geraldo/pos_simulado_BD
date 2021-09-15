@@ -36,7 +36,7 @@ public class SimuladoBdApplication {
             categoriaService.saveCategoria(cat2);
 
             Musica mus1 = new Musica();
-            mus1.setDuracao(4);
+            mus1.setDuracao(5);
             mus1.setTitulo("volta pra mim");
             mus1.setCategoria(cat1);
 
@@ -128,6 +128,13 @@ public class SimuladoBdApplication {
             logger.info("cantores encontrados findByNome");
             logger.info("---------------------------------");
             logger.info(cantorService.findByNomeCantor("Sergio Reis").toString());
+
+            logger.info("=================================");
+            logger.info("musicas encontrados findByMusicaTempoDuracao");
+            logger.info("---------------------------------");
+            for (Musica musica : musicaService.findByMusicaTempoDuraco(4)) {
+                logger.info(musica.toString());
+            }
 
         };
 
