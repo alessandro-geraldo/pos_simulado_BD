@@ -16,13 +16,20 @@ public class CantorService {
     public void saveCantor(Cantor cantor){
         cantorRepository.save(cantor);
     }
+
     public void deleteCantor(Long id){
         cantorRepository.deleteById(id);
     }
+
     public Optional<Cantor> findById(Long id){
         return cantorRepository.findById(id);
     }
+
     public List<Cantor> findAll(){
         return cantorRepository.findAll();
+    }
+
+    public Optional<Cantor> findByNomeCantor(String nome){
+        return cantorRepository.findByNomeCantor(nome);
     }
 }

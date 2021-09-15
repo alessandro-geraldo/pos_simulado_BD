@@ -68,4 +68,14 @@ public class Musica {
     public void setGravacoes(List<Gravacao> gravacoes) {
         this.gravacoes = gravacoes;
     }
+
+    @Override
+    public String toString() {
+        return "Musica{" +
+                "codMusica=" + codMusica +
+                ", duracao=" + duracao +
+                ", titulo='" + titulo + '\'' +
+                ", categoria=" + categoria +
+                '}';
+    }
 }

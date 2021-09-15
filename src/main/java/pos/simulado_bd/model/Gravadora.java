@@ -57,4 +57,13 @@ public class Gravadora {
     public void setGravacao(List<Gravacao> gravacao) {
         this.gravacao = gravacao;
     }
+
+    @Override
+    public String toString() {
+        return "Gravadora{" +
+                "codGravadora=" + codGravadora +
+                ", nomeGravadora='" + nomeGravadora + '\'' +
+                ", pais='" + pais + '\'' +
+                '}';
+    }
 }

@@ -48,4 +48,13 @@ public class Cantor {
     public void setPais(String pais) {
         this.pais = pais;
     }
+
+    @Override
+    public String toString() {
+        return "Cantor{" +
+                "codCantor=" + codCantor +
+                ", nomeCantor='" + nomeCantor + '\'' +
+                ", pais='" + pais + '\'' +
+                '}';
+    }
 }

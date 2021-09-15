@@ -37,4 +37,12 @@ public class Categoria {
     public void setDescCategoria(String descCategoria) {
         this.descCategoria = descCategoria;
     }
+
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "CodCategoria=" + CodCategoria +
+                ", descCategoria='" + descCategoria + '\'' +
+                '}';
+    }
 }

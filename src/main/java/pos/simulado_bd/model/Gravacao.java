@@ -67,4 +67,15 @@ public class Gravacao {
     public void setMusica(Musica musica) {
         this.musica = musica;
     }
+
+    @Override
+    public String toString() {
+        return "Gravacao{" +
+                "codGravacao=" + codGravacao +
+                ", dataGravacao=" + dataGravacao +
+                ", gravadora=" + gravadora +
+                ", cantor=" + cantor +
+                ", musica=" + musica +
+                '}';
+    }
 }

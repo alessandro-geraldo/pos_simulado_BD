@@ -14,7 +14,7 @@ public class GravacaoService {
     @Autowired
     GravacaoRepository gravacaoRepository;
 
-    public void savaGravacao(Gravacao gravacao){
+    public void saveGravacao(Gravacao gravacao){
         gravacaoRepository.save(gravacao);
     }
 
