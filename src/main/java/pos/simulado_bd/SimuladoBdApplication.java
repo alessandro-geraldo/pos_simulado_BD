@@ -24,8 +24,27 @@ public class SimuladoBdApplication {
                                   MusicaService musicaService,
                                   CantorService cantorService,
                                   GravadoraService gravadoraService,
-                                  GravacaoService gravacaoService) {
+                                  GravacaoService gravacaoService,
+                                  PessoaService pessoaService,
+                                  FoneService foneService) {
         return (args) -> {
+
+            Pessoa pes1 = new Pessoa();
+            pes1.setNomePessoa("Maria");
+
+            Pessoa pes2 = new Pessoa();
+            pes2.setNomePessoa("João");
+
+            pessoaService.savePessoa(pes1);
+            pessoaService.savePessoa(pes2);
+
+            Fone fone1 = new Fone();
+            fone1.setNumero("9901111474");
+            fone1.setTipo("celular");
+            fone1.setPessoa(pes1);
+
+            foneService.saveFone(fone1);
+
             Categoria cat1 = new Categoria();
             cat1.setDescCategoria("sertanejo");
 
@@ -141,6 +160,24 @@ public class SimuladoBdApplication {
             logger.info("---------------------------------");
             for (Gravadora gravadora : gravadoraService.findByGravadoraPorPais("Brasil")) {
                 logger.info(gravadora.toString());
+            }
+
+            logger.info("=================================");
+            logger.info("Pessoas encontrados findAll");
+            logger.info("---------------------------------");
+            for (Pessoa pessoa : pessoaService.findAll()) {
+                logger.info(pessoa.toString());
+            }
+            logger.info("=================================");
+            logger.info("pessoa encontrada findByNomePessoa");
+            logger.info("---------------------------------");
+            logger.info(pessoaService.findByNomePessoa("Maria").toString());
+
+            logger.info("=================================");
+            logger.info("Fones encontrados findAll");
+            logger.info("---------------------------------");
+            for (Fone fone: foneService.findAll()) {
+                logger.info(fone.toString());
             }
 
         };

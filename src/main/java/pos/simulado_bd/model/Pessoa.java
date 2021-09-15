@@ -46,4 +46,13 @@ public class Pessoa {
     public void setFones(List<Fone> fones) {
         this.fones = fones;
     }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "codPessoa=" + codPessoa +
+                ", nomePessoa='" + nomePessoa + '\'' +
+
+                '}';
+    }
 }

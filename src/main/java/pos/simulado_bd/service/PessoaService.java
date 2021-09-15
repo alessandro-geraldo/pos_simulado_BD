@@ -29,4 +29,8 @@ public class PessoaService {
     public List<Pessoa> findAll(){
         return pessoaRepository.findAll();
     }
+
+    public Optional<Pessoa> findByNomePessoa(String nome){
+        return pessoaRepository.findByNomePessoa(nome);
+    }
 }

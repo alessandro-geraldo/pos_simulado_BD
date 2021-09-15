@@ -56,4 +56,14 @@ public class Fone {
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
     }
+
+    @Override
+    public String toString() {
+        return "Fone{" +
+                "codFone=" + codFone +
+                ", numero='" + numero + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", pessoa=" + pessoa +
+                '}';
+    }
 }
