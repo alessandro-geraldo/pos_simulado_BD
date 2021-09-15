@@ -136,6 +136,13 @@ public class SimuladoBdApplication {
                 logger.info(musica.toString());
             }
 
+            logger.info("=================================");
+            logger.info("gravadoras encontrados findByGravadoraPorPais");
+            logger.info("---------------------------------");
+            for (Gravadora gravadora : gravadoraService.findByGravadoraPorPais("Brasil")) {
+                logger.info(gravadora.toString());
+            }
+
         };
 
 

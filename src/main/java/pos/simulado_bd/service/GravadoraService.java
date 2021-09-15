@@ -29,4 +29,8 @@ public class GravadoraService {
     public List<Gravadora> findAll(){
         return gravadoraRepository.findAll();
     }
+
+    public List<Gravadora> findByGravadoraPorPais(String pais){
+        return gravadoraRepository.findByGravadoraPorPais(pais);
+    }
 }
