@@ -9,7 +9,7 @@
 5. Crie na camada de lógica de negócios (@Service), pelo menos 2 (dois) métodos com consultas para cada entidade, utilizando injeção de dependências com a camada de acesso aos dados (@Repository). Quando necessário, acrescentar a assinatura dos métodos na camada de acesso aos dados.
 6. Usando o CommandLineRunner e o Logger, realize operações de inclusão, exclusão e consulta para todos os métodos criados na camada de lógica de negócio criada nas questões anteriores.
 
-## Tecnologias
+## Tecnologias utilizadas
 
 * Springboot
 * Banco de dados Postgrees
